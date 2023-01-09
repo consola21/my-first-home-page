@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #bbbbbb;
+    padding: 16px 24px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+header nav a{
+    display: block;
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+header nav a::after{
+    position: absolute;
+    inset: auto 0;
+    top: calc(100% + 4px);
+    content: '';
+    height: 2px;
+    background-color: currentcolor;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition-property: transfrom, background-color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+header nav a:hover {
+    color: #777
+}
+
+header nav a:hover::after{
+    transform-origin: left;
+    transform: scalex(100%);
+}
+
+h1{
+    font-size: 28px;
+    font-weight: 500;
+    margin:0;
+}
+
+main{
+    padding: 20px
+}
+
+main:hover{
+    animation: 2s ease-in-out infinite wave;
+}
+
+p{
+    margin: 0;
+}
+
+@keyframes wave {
+    0%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translateY(12px)
+    }    
+}
